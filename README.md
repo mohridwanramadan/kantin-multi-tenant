@@ -2,9 +2,7 @@
 
 Aplikasi kantin multi-tenant berbasis Laravel 13 dan Livewire 4, dikembangkan untuk praktikum mata kuliah Pemrograman Web Lanjut, Politeknik Negeri Banyuwangi.
 
----
-
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **Backend:** Laravel 13, PHP 8.4
 - **Frontend:** Livewire 4 (single-file components)
@@ -14,11 +12,7 @@ Aplikasi kantin multi-tenant berbasis Laravel 13 dan Livewire 4, dikembangkan un
 - **Testing:** PHPUnit
 - **Code Style:** Laravel Pint
 
----
-
-## 📋 Requirements
-
-Pastikan environment lokal sudah memenuhi kebutuhan berikut sebelum instalasi:
+## Requirements
 
 | Tool         | Versi Minimal |
 | :----------- | :------------ |
@@ -30,35 +24,24 @@ Pastikan environment lokal sudah memenuhi kebutuhan berikut sebelum instalasi:
 | **Redis**    | Terbaru       |
 | **Git**      | Terbaru       |
 
-> **Ekstensi PHP wajib aktif:** `pdo_mysql`, `mbstring`, `openssl`, `ctype`, `curl`, `fileinfo`, `xml`, `tokenizer`.
+> Ekstensi PHP wajib aktif: `pdo_mysql`, `mbstring`, `openssl`, `ctype`, `curl`, `fileinfo`, `xml`, `tokenizer`.
 
-2. Environment & Application Key
-   Bash
-   cp .env.example .env
-   php artisan key:generate
+## Instalasi & Setup
 
-3. Konfigurasi Environment (.env)
-   Sesuaikan variabel berikut pada file .env kamu
+```bash
+# 1. Clone repository & masuk folder
+git clone [https://github.com/mohridwanramadan/kantin-multi-tenant.git](https://github.com/mohridwanramadan/kantin-multi-tenant.git)
+cd kantin-multi-tenant
 
-    DB_CONNECTION=mysql
-    DB_HOST=127.0.0.1
-    DB_PORT=3306
-    DB_DATABASE=nama_database_anda
-    DB_USERNAME=root
-    DB_PASSWORD=
+# 2. Install dependency PHP & Node.js
+composer install
+npm install
 
-    REDIS_CLIENT=phpredis
-    REDIS_HOST=127.0.0.1
-    REDIS_PORT=6379
+# 3. Environment & Key
+cp .env.example .env
+php artisan key:generate
 
-    SESSION_DRIVER=redis
-    CACHE_STORE=redis
-    QUEUE_CONNECTION=redis
-
-    BROADCAST_CONNECTION=reverb
-    REVERB_APP_ID=
-    REVERB_APP_KEY=
-    REVERB_APP_SECRET=
-    REVERB_HOST=localhost
-    REVERB_PORT=8080
-    REVERB_SCHEME=http
+# 4. Migrasi Database & Build Aset
+php artisan migrate:fresh --seed
+npm run build
+```
