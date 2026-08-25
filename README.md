@@ -48,26 +48,40 @@ npm run build
 
 Konfigurasi Environment (.env)
 Sesuaikan variabel berikut pada file .env kamu:
-
 DB_CONNECTION=mysql
+
 DB_HOST=127.0.0.1
+
 DB_PORT=3306
+
 DB_DATABASE=nama_database_anda
+
 DB_USERNAME=root
+
 DB_PASSWORD=
 
 REDIS_CLIENT=phpredis
+
 REDIS_HOST=127.0.0.1
+
 REDIS_PORT=6379
 
 SESSION_DRIVER=redis
+
 CACHE_STORE=redis
+
 QUEUE_CONNECTION=redis
 
 BROADCAST_CONNECTION=reverb
+
 REVERB_APP_ID=
+
 REVERB_APP_KEY=
+
 REVERB_APP_SECRET=
+
 REVERB_HOST=localhost
+
 REVERB_PORT=8080
+
 REVERB_SCHEME=http
